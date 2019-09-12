@@ -24,10 +24,9 @@ class Column extends React.Component{
             key: state.cards.length ? state.cards[state.cards.length-1].key+1 : 0,
             title,
             icon: 'list-alt',
-            cards: []
           }
-        ]
-      }
+        ],
+      },
     ));
   }
 
@@ -35,19 +34,19 @@ class Column extends React.Component{
     return (
       <section className={styles.component}>
         <h3 className={styles.title}>
-        <span className={styles.icon}><Icon name={this.props.icon} /></span>
-        {this.props.title}
+          <span className={styles.icon}><Icon name={this.props.icon} /></span>
+          {this.props.title}
         </h3>
         <div className={styles.columns}>
-        {this.state.cards.map(({key, ...cardProps}) => (
-          <Card key={key} {...cardProps} />
-        ))}
+          {this.state.cards.map(({key, ...cardProps}) => (
+            <Card key={key} {...cardProps} />
+          ))}
         </div>
         <div className={styles.creator}>
           <Creator text={settings.cardCreatorText} action={title => this.addCard(title)}/>
         </div>
       </section>
-    )
+    );
   }
 }
 
