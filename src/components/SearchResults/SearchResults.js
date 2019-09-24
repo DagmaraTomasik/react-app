@@ -15,9 +15,7 @@ class SearchResults extends React.Component{
   }
 
   componentWillMount(){
-    if(this.props.searchString == ''){
-      this.props.changeSearchString(this.props.match.params.searchString);
-    }
+    this.props.changeSearchString(this.props.match.params.searchString);
   }
 
   render(){
